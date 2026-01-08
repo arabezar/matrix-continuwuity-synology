@@ -11,13 +11,16 @@
 ## Ограничения
 
 - Реализованная архитектура проверялась на белом статическом IP-адресе провайдера, как она будет вести себя на динамическом адресе - не знаю, проверяйте.
+- Клиент `Element X` пока не умеет соединяться по видео (пустой экран)
 
 ## Подготовка до развёртывания
 
 ### Проброс портов на роутере
 Направьте на локальный IP Synology:
 - TCP: 80 (HTTP), 443 (HTTPS) - традиционно
-- TCP/UDP: 3478 (Matrix TURN)
+- TCP/UDP: 3478 (Matrix TURN) - необязательно
+- TCP: 7881 (LiveKit Signal/TCP fallback) - необязательно
+- UDP: 30000-40000 (LiveKit Media TURN relay) - необязательно
 - UDP: 50100-50200 (LiveKit Media)
 
 ### Настройка Synology Reverse Proxy
@@ -25,7 +28,7 @@
 - `matrix.example.com:443` -> `http://localhost:18080` (WebSocket: ON)
 - `auth.example.com:443` -> `http://localhost:18080` (WebSocket: ON)
 - `livekit.example.com:443` -> `http://localhost:18080` (WebSocket: ON)
-- `example.com:443` -> `http://localhost:18080` (WebSocket: ON) - не обязательно, см. [Нюансы](#нюансы-развёртывания) ниже
+- `example.com:443` -> `http://localhost:18080` (WebSocket: ON) - необязательно, см. [Нюансы](#нюансы-развёртывания) ниже
 
 ## Развёртывание
 
