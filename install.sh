@@ -4,7 +4,7 @@ VERSION="0.0.1" # Версия скрипта
 
 DOCKER_PATH="/var/packages/ContainerManager/shares/docker"
 MATRIX_PRJ_NAME_DEFAULT="matrix-continuwuity"
-TEMPLATES_URL_BASE="https://github.com/arabezar/howto-synology-matrix-continuwuity/raw/refs/heads/main"
+TEMPLATES_URL_BASE="https://github.com/arabezar/matrix-continuwuity-synology/raw/refs/heads/main"
 
 # Проверка наличия необходимых утилит и условий
 echo "Установка Matrix Continuwuity + LiveKit in Docker v${VERSION}..."
